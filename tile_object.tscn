@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ayimnfi2h5h"]
+
+[ext_resource type="Script" uid="uid://co7bcc7yaaptd" path="res://tile_object.gd" id="1_3m8ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8k71"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_area"]
+size = Vector2(140, 140)
+
+[node name="TileObject" type="StaticBody2D"]
+script = ExtResource("1_3m8ll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l8k71")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_area")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4e5f6g7h8i9"]
+
+[ext_resource type="Script" uid="uid://a4b5c6d7e8f9" path="res://enemies/bomb.gd" id="1_bomb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bomb"]
+size = Vector2(64, 64)
+
+[node name="Bomb" type="CharacterBody2D"]
+script = ExtResource("1_bomb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bomb")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_bomb")

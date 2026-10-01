@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3vwrcq1ac6cd"
+path="res://.godot/imported/Main Menu - cauliflower.ogg-692409e1b74748f097f7909d144add2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Main Menu - cauliflower.ogg"
+dest_files=["res://.godot/imported/Main Menu - cauliflower.ogg-692409e1b74748f097f7909d144add2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb3p8p5q04v7w"]
+
+[ext_resource type="Script" path="res://leaderboard_view.gd" id="1_leaderboard"]
+
+[node name="LeaderboardView" type="CanvasLayer"]
+script = ExtResource("1_leaderboard")

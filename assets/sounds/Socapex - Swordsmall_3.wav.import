@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h0e46ic1ut33"
+path="res://.godot/imported/Socapex - Swordsmall_3.wav-aa57b0866f7f2e6c64ba73fa1144345a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Socapex - Swordsmall_3.wav"
+dest_files=["res://.godot/imported/Socapex - Swordsmall_3.wav-aa57b0866f7f2e6c64ba73fa1144345a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

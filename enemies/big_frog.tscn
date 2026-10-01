@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm3ccsklbd542"]
+
+[ext_resource type="Script" uid="uid://bfccyvtylaen3" path="res://enemies/big_frog.gd" id="1_big_frog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_big_frog"]
+size = Vector2(128, 128)
+
+[node name="BigFrog" type="CharacterBody2D"]
+script = ExtResource("1_big_frog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_big_frog")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_big_frog")

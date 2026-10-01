@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://eaf8e7a6b5c4"]
+
+[ext_resource type="Script" uid="uid://du2h7ebng0w7f" path="res://smasher.gd" id="1_smasher"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smasher"]
+size = Vector2(192, 256)
+
+[node name="Smasher" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_smasher")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_smasher")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 140)

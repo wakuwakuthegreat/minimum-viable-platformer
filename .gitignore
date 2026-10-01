@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+.godot/
+/android/build/
+/ios/
+*.aar
+
+# Android signing — never commit these. Losing the keystore means you can never
+# update the Play listing again; committing it means anyone can sign as you.
+*.keystore
+*.jks
+keystore.properties
+
+# Export output
+*.apk
+*.aab

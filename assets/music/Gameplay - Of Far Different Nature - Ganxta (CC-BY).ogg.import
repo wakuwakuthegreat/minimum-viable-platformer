@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfh1pa0j7x5nq"
+path="res://.godot/imported/Gameplay - Of Far Different Nature - Ganxta (CC-BY).ogg-e2323bb04fbb8bca03631bef67a0e9a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Gameplay - Of Far Different Nature - Ganxta (CC-BY).ogg"
+dest_files=["res://.godot/imported/Gameplay - Of Far Different Nature - Ganxta (CC-BY).ogg-e2323bb04fbb8bca03631bef67a0e9a4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

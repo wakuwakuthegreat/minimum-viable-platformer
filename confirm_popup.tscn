@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c8qk1wpxjrma"]
+
+[ext_resource type="Script" path="res://confirm_popup.gd" id="1_cp"]
+
+[node name="ConfirmPopup" type="CanvasLayer"]
+script = ExtResource("1_cp")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="Root/Center"]
+custom_minimum_size = Vector2(420, 216)
+layout_mode = 2
+
+[node name="V" type="VBoxContainer" parent="Root/Center/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root/Center/Panel/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+text = "Really leave?"
+
+[node name="Message" type="Label" parent="Root/Center/Panel/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+autowrap_mode = 3
+text = ""
+
+[node name="Buttons" type="HBoxContainer" parent="Root/Center/Panel/V"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Cancel" type="Button" parent="Root/Center/Panel/V/Buttons"]
+custom_minimum_size = Vector2(160, 56)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="Root/Center/Panel/V/Buttons"]
+custom_minimum_size = Vector2(160, 56)
+layout_mode = 2
+text = "Leave"

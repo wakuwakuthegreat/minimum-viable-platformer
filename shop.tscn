@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1shopskilltreez"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_shop"]
+[ext_resource type="Script" path="res://skill_tree_view.gd" id="2_stv"]
+[ext_resource type="Script" path="res://menu_bg.gd" id="3_bg"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_shop")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("3_bg")
+
+[node name="TopBar" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+
+[node name="BackButton" type="Button" parent="Root/TopBar"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "← Back"
+
+[node name="Title" type="Label" parent="Root/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+text = "Skill Tree"
+
+[node name="TokensLabel" type="Label" parent="Root/TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 2
+text = "★  0 tokens"
+
+[node name="Body" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 96.0
+offset_right = -24.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Tree" type="Control" parent="Root/Body"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+script = ExtResource("2_stv")
+
+[node name="Detail" type="Panel" parent="Root/Body"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Body/Detail"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="V" type="VBoxContainer" parent="Root/Body/Detail/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Root/Body/Detail/Scroll/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "—"
+autowrap_mode = 2
+
+[node name="Branch" type="Label" parent="Root/Body/Detail/Scroll/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Branch:"
+
+[node name="Cost" type="Label" parent="Root/Body/Detail/Scroll/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Cost: -"
+
+[node name="Desc" type="Label" parent="Root/Body/Detail/Scroll/V"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 2
+text = ""
+
+[node name="Status" type="Label" parent="Root/Body/Detail/Scroll/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 2
+text = ""
+
+[node name="BuyButton" type="Button" parent="Root/Body/Detail/Scroll/V"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Buy"
+
+[node name="Legend" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -52.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 22

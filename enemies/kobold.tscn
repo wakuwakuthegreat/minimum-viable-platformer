@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6g7h8i9j0k1"]
+
+[ext_resource type="Script" uid="uid://c6d7e8f9g0h1" path="res://enemies/kobold.gd" id="1_kobold"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kobold"]
+size = Vector2(64, 96)
+
+[node name="Kobold" type="CharacterBody2D"]
+script = ExtResource("1_kobold")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kobold")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_kobold")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-32, 48)
+target_position = Vector2(0, 20)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(32, 48)
+target_position = Vector2(0, 20)

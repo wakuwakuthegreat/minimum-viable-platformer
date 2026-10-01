@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ramp0000000"]
+
+[ext_resource type="Script" uid="uid://ramp1111111" path="res://ramp.gd" id="1_ramp"]
+
+[node name="Ramp" type="StaticBody2D"]
+script = ExtResource("1_ramp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8fr4b8ym3dab"
+path="res://.godot/imported/Shop Loop - Of Far Different Nature - Ethnic Beat (CC-BY).ogg-ded3983a7c9fec5c6cf39724e043d8c3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Shop Loop - Of Far Different Nature - Ethnic Beat (CC-BY).ogg"
+dest_files=["res://.godot/imported/Shop Loop - Of Far Different Nature - Ethnic Beat (CC-BY).ogg-ded3983a7c9fec5c6cf39724e043d8c3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

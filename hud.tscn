@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfl6d7ipwmiof"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Bar" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+
+[node name="Distance" type="Label" parent="Root/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "▶ 0 m"
+
+[node name="Tokens" type="Label" parent="Root/Bar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+text = "★ 0"
+
+[node name="Best" type="Label" parent="Root/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+text = "best 0 m"

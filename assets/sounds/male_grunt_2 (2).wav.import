@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blwxlgxxnq6ll"
+path="res://.godot/imported/male_grunt_2 (2).wav-d76146b73f311f5d0b07cf7974d32eea.sample"
+
+[deps]
+
+source_file="res://assets/sounds/male_grunt_2 (2).wav"
+dest_files=["res://.godot/imported/male_grunt_2 (2).wav-d76146b73f311f5d0b07cf7974d32eea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

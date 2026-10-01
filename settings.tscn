@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1settings9001"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_s"]
+[ext_resource type="Script" path="res://menu_bg.gd" id="2_bg"]
+
+[node name="Settings" type="CanvasLayer"]
+script = ExtResource("1_s")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_bg")
+
+[node name="TopBar" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="Button" parent="Root/TopBar"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "← Back"
+
+[node name="Title" type="Label" parent="Root/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+text = "Settings"
+
+[node name="Spacer" type="Control" parent="Root/TopBar"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -260.0
+offset_right = 340.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+horizontal_scroll_mode = 0
+
+[node name="V" type="VBoxContainer" parent="Root/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 18
+
+[node name="MasterRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/MasterRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Master volume"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/Scroll/V/MasterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="SFXRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/SFXRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SFX volume"
+
+[node name="Slider" type="HSlider" parent="Root/Panel/Scroll/V/SFXRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="ThemeRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/ThemeRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "UI theme"
+
+[node name="Option" type="OptionButton" parent="Root/Panel/Scroll/V/ThemeRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DebugRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/DebugRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Show debug overlay"
+
+[node name="CheckBox" type="CheckBox" parent="Root/Panel/Scroll/V/DebugRow"]
+layout_mode = 2
+
+[node name="PrimitivesRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/PrimitivesRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Force primitives"
+
+[node name="CheckBox" type="CheckBox" parent="Root/Panel/Scroll/V/PrimitivesRow"]
+layout_mode = 2
+
+[node name="UnlockAllRow" type="HBoxContainer" parent="Root/Panel/Scroll/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Root/Panel/Scroll/V/UnlockAllRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Cheat: unlock all"
+
+[node name="CheckBox" type="CheckBox" parent="Root/Panel/Scroll/V/UnlockAllRow"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="Root/Panel/Scroll/V"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Reset all progress"

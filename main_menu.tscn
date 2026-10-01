@@ -1,0 +1,119 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1mainmenuxx"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_mm"]
+[ext_resource type="Script" path="res://menu_bg.gd" id="2_bg"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_mm")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_bg")
+
+[node name="TopBar" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+
+[node name="TokensLabel" type="Label" parent="Root/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "★  0  tokens"
+
+[node name="BestLabel" type="Label" parent="Root/TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2
+text = "best:  0 m"
+
+[node name="TitleBox" type="VBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -480.0
+offset_top = 90.0
+offset_right = 480.0
+offset_bottom = 260.0
+grow_horizontal = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Root/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+text = "Minimum Viable Platformer"
+
+[node name="Subtitle" type="Label" parent="Root/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+text = "A game you build one pixel at a time"
+
+[node name="ButtonsScroll" type="ScrollContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = 268.0
+offset_right = 230.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="ButtonsCenter" type="CenterContainer" parent="Root/ButtonsScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonsPad" type="MarginContainer" parent="Root/ButtonsScroll/ButtonsCenter"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Buttons" type="VBoxContainer" parent="Root/ButtonsScroll/ButtonsCenter/ButtonsPad"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Root/ButtonsScroll/ButtonsCenter/ButtonsPad/Buttons"]
+custom_minimum_size = Vector2(360, 64)
+layout_mode = 2
+text = "Play"
+
+[node name="ShopButton" type="Button" parent="Root/ButtonsScroll/ButtonsCenter/ButtonsPad/Buttons"]
+custom_minimum_size = Vector2(360, 64)
+layout_mode = 2
+text = "Shop"
+
+[node name="SettingsButton" type="Button" parent="Root/ButtonsScroll/ButtonsCenter/ButtonsPad/Buttons"]
+custom_minimum_size = Vector2(360, 64)
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Root/ButtonsScroll/ButtonsCenter/ButtonsPad/Buttons"]
+custom_minimum_size = Vector2(360, 64)
+layout_mode = 2
+text = "Exit"

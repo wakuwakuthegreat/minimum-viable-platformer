@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdp1eaowgt4k3"
+path="res://.godot/imported/Gameplay - Of Far Different Nature - Nature Loop (CC-BY).ogg-85558b70db301653930c5d17d845887c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Gameplay - Of Far Different Nature - Nature Loop (CC-BY).ogg"
+dest_files=["res://.godot/imported/Gameplay - Of Far Different Nature - Nature Loop (CC-BY).ogg-85558b70db301653930c5d17d845887c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

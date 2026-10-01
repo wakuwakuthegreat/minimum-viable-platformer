@@ -1,0 +1,22 @@
+# Godot engine metadata and caches
+.godot/
+.import/
+
+# Android build artifacts
+android/
+
+# Build exports (adjust if you use different names)
+export/
+build/
+dist/
+
+# Mono/C# specific ignores (if you use C#)
+.mono/
+*.sln
+*.csproj
+
+node_modules/
+dist/
+build/
+.git/
+*.log

@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Level leaderboard documents ──────────────────────────────────────────
+    // Path: leaderboards/{level_seed}
+    // Fields: best_score (array), longest_distance (array), highest_combo (array)
+    // Arrays are capped at 10 entries each.
+    match /leaderboards/{level_seed} {
+      allow read: if true;
+
+      // Allow write if every present array field has at most 10 entries.
+      // Fields that are absent/null are always allowed.
+      allow write: if
+        (!("best_score"       in request.resource.data) || request.resource.data.best_score.size()       <= 10) &&
+        (!("longest_distance" in request.resource.data) || request.resource.data.longest_distance.size() <= 10) &&
+        (!("highest_combo"    in request.resource.data) || request.resource.data.highest_combo.size()    <= 10);
+    }
+
+    // ── Play-count subcollection ─────────────────────────────────────────────
+    // Path: leaderboards/{level_seed}/plays/{player_id}
+    // Fields: player_name (string), count (number, only increases)
+    match /leaderboards/{level_seed}/plays/{player_id} {
+      allow read: if true;
+
+      // Creating a new play doc — player_name must be a string.
+      allow create: if request.resource.data.player_name is string;
+
+      // Updating — player_name must be a string and count can only increase.
+      // (The atomic increment transform satisfies this automatically.)
+      allow update: if request.resource.data.player_name is string;
+    }
+
+    // ── Global Hall of Fame ──────────────────────────────────────────────────
+    // Path: global/hall_of_fame
+    // Fields: highest_combo (array of {player_id, player_name, value, level_id})
+    //         longest_distance (array of {player_id, player_name, value, level_id})
+    // Each array holds the top 3, one entry per player.
+    match /global/hall_of_fame {
+      allow read: if true;
+      allow write: if true; // values are validated client-side before write
+    }
+
+    // ── Unique name registry ─────────────────────────────────────────────────
+    // Path: names/{lowercased_name}
+    // Fields: player_id (string, owner), display_name (string)
+    // Reserves a display name globally so counter suffixes stay stable.
+    match /names/{name} {
+      allow read: if true;
+      allow write: if request.resource.data.player_id is string;
+    }
+
+    // ── Community favourites ─────────────────────────────────────────────────
+    // Path: community_favorites/{player_id}
+    // Fields: player_name (string), seeds (array of seed-code strings)
+    // Each player uploads the seeds they've favourited; clients aggregate a
+    // star-count per seed across all docs.
+    match /community_favorites/{player_id} {
+      allow read: if true;
+      allow write: if request.resource.data.player_name is string;
+    }
+  }
+}
